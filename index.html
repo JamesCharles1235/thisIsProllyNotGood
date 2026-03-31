@@ -2,29 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Original Title</title>
+    <title>Type to change me!</title>
 </head>
 <body>
 
-    <h2>Change Page Title</h2>
-  
-    <input type="text" id="titleInput" placeholder="Enter new title...">
-  
-    <button onclick="changeTitle()">Update Title</button>
+    <h2>Real-Time Title Sensor</h2>
+    
+    <!-- Added oninput to trigger the function every time the text changes -->
+    <input type="text" id="titleInput" placeholder="Start typing..." oninput="changeTitle()">
+    
+    <button onclick="changeTitle()">Manual Update</button>
 
     <script>
         function changeTitle() {
-      
-            const newTitle = document.getElementById('titleInput').value;
+            const input = document.getElementById('titleInput');
+            const newTitle = input.value;
             
-         
-            if (newTitle.trim() !== "") {
-               
-                document.title = newTitle;
-                console.log("Title updated to: " + newTitle);
-            } else {
-                alert("Please enter a name first!");
-            }
+            // Update the title immediately. 
+            // If the input is empty, it defaults back to a placeholder.
+            document.title = newTitle.trim() !== "" ? newTitle : "Waiting for input...";
         }
     </script>
 
