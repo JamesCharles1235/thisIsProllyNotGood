@@ -1,28 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Type to change me!</title>
-</head>
-<body>
-
-    <h2>Real-Time Title Sensor</h2>
+<html>
     
-    <!-- Added oninput to trigger the function every time the text changes -->
-    <input type="text" id="titleInput" placeholder="Start typing..." oninput="changeTitle()">
-    
-    <button onclick="changeTitle()">Manual Update</button>
-
-    <script>
-        function changeTitle() {
-            const input = document.getElementById('titleInput');
-            const newTitle = input.value;
-            
-            // Update the title immediately. 
-            // If the input is empty, it defaults back to a placeholder.
-            document.title = newTitle.trim() !== "" ? newTitle : "Waiting for input...";
-        }
-    </script>
-
-</body>
 </html>
